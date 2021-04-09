@@ -1,3 +1,18 @@
+###API Crud/Postman
+
+Postman Posting new ID
+![Adding New id](./src/img/newid.png)
+Browser Table with new ID
+![Adding New id](./src/img/newid2.png)
+
+Postman Deliting new ID
+![Adding New id](./src/img/deleteid.png)
+Browser Table with new ID
+![Adding New id](./src/img/deleteid2.png)
+
+
+
+-------------------------
 GitHub Pages:
 https://andyrm8052.github.io/WebpackAPI/
 
