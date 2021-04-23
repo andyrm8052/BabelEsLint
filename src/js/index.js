@@ -13,10 +13,10 @@ getJSON('http://localhost:8000/api/v1/cities',
         if (err !== null) {
             alert('Something went wrong: ' + err);
         } else {
-            let table = document.querySelector("table");
-            let data = Object.keys((records.data[0]));
-            let dataRecords = records.data;
-            let create = new Table();
+            const table = document.querySelector("table");
+            const data = Object.keys((records.data[0]));
+            const dataRecords = records.data;
+            const create = new Table();
             create.generateTableHead(table, data);
             create.generateTable(table, dataRecords);
             /*
