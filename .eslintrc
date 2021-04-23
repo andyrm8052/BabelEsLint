@@ -2,14 +2,15 @@
   "parser": "babel-eslint",
   "extends": ["airbnb"],
   "rules": {
-    "max-len": [1, 120, 2, { "ignoreComments": true }],
-    "no-console": 0,
+    "max-len": [1, 300, 2, { "ignoreComments": true }],
+    "no-console": "off",
     "no-shadow": ["error", { "builtinGlobals": false, "hoist": "functions", "allow": [] }],
     "no-unused-vars": [1, {"vars": "local", "args": "none"}],
     "linebreak-style": 0, //fixes linebreak error
     "indent": "off", //fixes indent error
     "eol-last": 0, //fixes newline error
     "padded-blocks": ["error", { "blocks": "never"}], //allows multiple lines without error
-    "resolve": {"extensions": [".js"]} //fixes error for unexpected .js file
+    "resolve": {"extensions": [".js"]}, //fixes error for unexpected .js file
+    "space-before-function-paren": 0 //fixes the missing space error
   }
 }
