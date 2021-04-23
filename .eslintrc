@@ -7,6 +7,7 @@
     "no-shadow": ["error", { "builtinGlobals": false, "hoist": "functions", "allow": [] }],
     "no-unused-vars": 0,
     "linebreak-style": 0, //fixes linebreak error
-    "indent": "off" //fixes indent error
+    "indent": "off", //fixes indent error
+    "eol-last": 0 //fixes newline error
   }
 }
