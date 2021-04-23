@@ -13,6 +13,7 @@
     "resolve": {"extensions": [".js"]}, //fixes error for unexpected .js file
     "space-before-function-paren": 0, //fixes the missing space error
     "no-extra-semi": "off", //removes the error for semicolon
+    "quotes": ["single"],
     "prefer-destructuring": ["error", { //fixes object destructuring error
       "AssignmentExpression": {
         "array": false,
@@ -20,6 +21,9 @@
       }
     }],
     "no-undef": 0, //fixes XMLHttpRequest error
-    "func-names": ["error", "never"]  //fixes unexpected unnamed function
+    "func-names": ["error", "never"],  //fixes unexpected unnamed function
+    "no-restricted-syntax": 0,
+    "class-methods-use-this": 0,
+    "guard-for-in": 0
   }
 }

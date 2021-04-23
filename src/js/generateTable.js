@@ -12,7 +12,7 @@ class generateTableFunction {
     }
 
     generateTable(table, data) {
-        for (let element of data) {
+        for (const element of data) {
             const row = table.insertRow();
             console.log(element);
             for (const key in element) {
