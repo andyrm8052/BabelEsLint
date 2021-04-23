@@ -11,6 +11,7 @@
     "eol-last": 0, //fixes newline error
     "padded-blocks": ["error", { "blocks": "never"}], //allows multiple lines without error
     "resolve": {"extensions": [".js"]}, //fixes error for unexpected .js file
-    "space-before-function-paren": 0 //fixes the missing space error
+    "space-before-function-paren": 0, //fixes the missing space error
+    "no-extra-semi": "off" //removes the error for semicolon
   }
 }
