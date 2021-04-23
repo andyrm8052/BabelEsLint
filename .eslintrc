@@ -8,6 +8,7 @@
     "no-unused-vars": 0,
     "linebreak-style": 0, //fixes linebreak error
     "indent": "off", //fixes indent error
-    "eol-last": 0 //fixes newline error
+    "eol-last": 0, //fixes newline error
+    "padded-blocks": ["error", { "blocks": "never"}] //allows multiple lines without error
   }
 }
