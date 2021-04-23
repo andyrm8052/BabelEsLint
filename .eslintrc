@@ -19,6 +19,7 @@
         "object": false
       }
     }],
-    "no-undef": 0 //fixes XMLHttpRequest error
+    "no-undef": 0, //fixes XMLHttpRequest error
+    "func-names": ["error", "never"]  //fixes unexpected unnamed function
   }
 }
