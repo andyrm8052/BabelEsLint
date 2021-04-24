@@ -1,8 +1,8 @@
-###Homepage
+### Homepage
 ![Homepage](img/home.png)
 
-###Login Page
+### Login Page
 ![Login Page](img/login.png)
 
-###Registration Page
+### Registration Page
 ![Register Page](img/register.png)
