@@ -1,13 +1,20 @@
 //'use strict';
-
+/**
+ * Required External Modules
+ */
 const express = require('express');
-
 const exphbs = require('express-handlebars');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const crypto = require('crypto');
 const { auth } = require('express-openid-connect');
+const path = require("path");
+const expressSession = require("express-session");
+const passport = require("passport");
+const Auth0Strategy = require("passport-auth0");
+
 require("dotenv").config();
+
 
 const getHashedPassword = (password) => {
     const sha256 = crypto.createHash('sha256');
@@ -22,7 +29,21 @@ const getHashedPassword = (password) => {
 const app = express();
 const port = process.env.PORT || "8000";
 
+/**
+ * Session Configuration
+ */
 
+const session = {
+    secret: process.env.SESSION_SECRET,
+    cookie: {},
+    resave: false,
+    saveUninitialized: false
+};
+
+if (app.get("env") === "production") {
+    // Serve secure cookies, requires HTTPS
+    session.cookie.secure = true;
+}
 
 const users = [
     // This user is added to the array to avoid creating a new user on each restart
