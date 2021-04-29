@@ -1,10 +1,13 @@
 //'use strict';
-const express = require('express')
+
+const express = require('express');
+
 const exphbs = require('express-handlebars');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const app = express();
 const crypto = require('crypto');
+const { auth } = require('express-openid-connect');
+require("dotenv").config();
 
 const getHashedPassword = (password) => {
     const sha256 = crypto.createHash('sha256');
@@ -12,16 +15,27 @@ const getHashedPassword = (password) => {
     return hash;
 }
 
+/**
+ * App Variables
+ */
+
+const app = express();
+const port = process.env.PORT || "8000";
+
+
+
 const users = [
     // This user is added to the array to avoid creating a new user on each restart
     {
-        firstName: 'John',
-        lastName: 'Doe',
-        email: 'johndoe@email.com',
+        firstName: 'Andy',
+        lastName: 'Marmolejos',
+        email: 'arm65@gmail.com',
         // This is the SHA256 hash for value of `password`
         password: 'XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg='
     }
 ];
+
+
 
 app.post('/register', (req, res) => {
     const { email, firstName, lastName, password, confirmPassword } = req.body;
@@ -153,3 +167,4 @@ app.get('/protected', (req, res) => {
         });
     }
 });
+
