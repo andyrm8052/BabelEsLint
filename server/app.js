@@ -12,7 +12,7 @@ const path = require("path");
 const expressSession = require("express-session");
 const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
-
+const authRouter = require("./auth");
 require("dotenv").config();
 
 
@@ -89,6 +89,9 @@ passport.serializeUser((user, done) => {
 passport.deserializeUser((user, done) => {
     done(null, user);
 });
+
+// Router mounting
+app.use("/", authRouter);
 
 
 
