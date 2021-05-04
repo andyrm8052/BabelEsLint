@@ -67,7 +67,7 @@ app.post('/login', (req, res) => {
 
 
 /**
- * Login Configuration for Matching Data
+ * Token Configuration
  **/
 app.post('/token', (req, res) => {
     const { token } = req.body;
@@ -91,4 +91,15 @@ app.post('/token', (req, res) => {
             accessToken
         });
     });
+});
+
+
+/**
+ * Logout Configuration
+ **/
+app.post('/logout', (req, res) => {
+    const { token } = req.body;
+    refreshTokens = refreshTokens.filter(token => t !== token);
+
+    res.send("Logout successful");
 });
