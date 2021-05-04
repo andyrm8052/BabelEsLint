@@ -1,33 +1,23 @@
-//'use strict';
 /**
  * Required External Modules
  */
 const express = require('express');
-const exphbs = require('express-handlebars');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-const crypto = require('crypto');
-const { auth } = require('express-openid-connect');
 const path = require("path");
+
 const expressSession = require("express-session");
 const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
+
 const authRouter = require("./auth");
 require("dotenv").config();
 
-
-const getHashedPassword = (password) => {
-    const sha256 = crypto.createHash('sha256');
-    const hash = sha256.update(password).digest('base64');
-    return hash;
-}
 
 /**
  * App Variables
  */
 
 const app = express();
-const port = process.env.PORT || "8000";
+const port = process.env.PORT || "3000";
 
 /**
  * Session Configuration
@@ -96,5 +86,32 @@ app.use((req, res, next) => {
     next();
 });
 
+/**
+ * Routes Definitions
+ */
+
+const secured = (req, res, next) => {
+    if (req.user) {
+        return next();
+    }
+    req.session.returnTo = req.originalUrl;
+    res.redirect("/login");
+};
+
+// Defined routes
+//app.get("/", ... );
+
+app.get("/user", secured, (req, res, next) => {
+    const { _raw, _json, ...userProfile } = req.user;
+    res.render("user", {
+        title: "Profile",
+        userProfile: userProfile
+    });
+});
+
 // Router mounting
 app.use("/", authRouter);
+
+app.listen(port, () => {
+    console.log(`Listening to requests on http://localhost:3000`);
+});
