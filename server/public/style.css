@@ -1,20 +1,20 @@
 .NavButton {
-    display: inline;
-    float: left;
-    height: 25px;
-    width: 100px;
-    text-align: center;
+    margin-top: 10px;
+    display: inline-block;
+    height: 40px;
+    width: 120px;
+    text-decoration: none;
     border-radius: 15px;
-    padding-top: 8px;
+    padding-top: 12px;
     background: black;
     color: white;
     font-family: Arial;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 20px;
 }
 
-.NavButtons{
-    display: flex;
-    justify-content: center;
-    float: left;
+
+html{
+    margin-top: 180px;
+    background-color: gainsboro;
+    text-align: center;
 }
