@@ -99,8 +99,9 @@ const secured = (req, res, next) => {
 };
 
 // Defined routes
-//app.get("/", ... );
-
+app.get('/', (req, res) => {
+    res.render("index", { title: "Home" });
+});
 app.get("/user", secured, (req, res, next) => {
     const { _raw, _json, ...userProfile } = req.user;
     res.render("user", {
