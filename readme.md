@@ -1,8 +1,9 @@
 ### Homepage
-![Homepage](img/home.png)
+![Homepage](img/Home.png)
 
 ### Login Page
-![Login Page](img/login.png)
+![Login Page from Auth](img/AuthLogin.png)
+![Login Page](img/Login.png)
 
-### Registration Page
-![Register Page](img/register.png)
+### User Page
+![User Page](img/User.png)
