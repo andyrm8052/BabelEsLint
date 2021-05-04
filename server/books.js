@@ -69,3 +69,28 @@ const authenticateJWT = (req, res, next) => {
         res.sendStatus(401);
     }
 };
+
+
+/**
+ * GET Request Handler
+ **/
+app.get('/books', authenticateJWT, (req, res) => {
+    res.json(books);
+});
+
+/**
+ * POST Request Handler
+ **/
+app.post('/books', authenticateJWT, (req, res) => {
+    const { role } = req.user;
+
+    if (role !== 'admin') {
+        return res.sendStatus(403);
+    }
+
+
+    const book = req.body;
+    books.push(book);
+
+    res.send('Book added successfully');
+});
