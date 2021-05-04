@@ -1,0 +1,20 @@
+.NavButton {
+    display: inline;
+    float: left;
+    height: 25px;
+    width: 100px;
+    text-align: center;
+    border-radius: 15px;
+    padding-top: 8px;
+    background: black;
+    color: white;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.NavButtons{
+    display: flex;
+    justify-content: center;
+    float: left;
+}
