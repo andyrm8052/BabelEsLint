@@ -33,14 +33,14 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 
-const accessTokenSecret = 'youraccesstokensecret';
+const accessTokenSecret = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjAxNDY2OTgsImV4cCI6MTYyMDE0Nzg5OH0.pksZxGYerP1oT0EYxKTlXDiREOr3vT793tjMZIhcjP0";
 
 
 /**
  * Login Configuration for Matching Data
  **/
-const refreshTokenSecret = 'yourrefreshtokensecrethere';
-const refreshTokens = [];
+const refreshTokenSecret = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjAxNDY2OTh9.KpjQViMc-hMEHBCgFpOnz0v_sLqj2ert4hYR16ZpYm0";
+let refreshTokens = [];
 
 app.post('/login', (req, res) => {
     // Read username and password from request body
