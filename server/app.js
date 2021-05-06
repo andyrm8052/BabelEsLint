@@ -118,20 +118,7 @@ app.engine('hbs', exphbs({
 app.set('view engine','hbs');
 app.listen(3000);
 
-//request handle for the home page
-app.get('/', function (req, res) {
-    res.render('home');
-});
 
-//request handle for registration
-app.get('/register', (req, res) => {
-    res.render('register');
-});
-
-//request handle for login page
-app.get('/login', (req, res) => {
-    res.render('login');
-});
 
 app.use((req, res, next) => {
     // Get auth token from the cookies
