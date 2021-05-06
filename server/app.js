@@ -142,7 +142,8 @@ app.use((req, res, next) => {
     next();
 });
 
-//request handle for protected page
+
+//request handle for protected page.
 app.get('/protected', (req, res) => {
     if (req.user) {
         res.render('protected');
